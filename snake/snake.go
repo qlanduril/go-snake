@@ -23,10 +23,10 @@ func NewSnake(dSize int, headPos *cord.Position) *Snake {
 
 	tmp := make([]*cord.Position, 1)
 
-	tmp[0] = headPos
-
 	if headPos == nil {
 		tmp[0] = cord.NewPosition(dSize)
+	} else {
+		tmp[0] = headPos
 	}
 
 	return &Snake{

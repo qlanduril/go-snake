@@ -5,11 +5,26 @@ import (
 	"image/color"
 	"log"
 
+	snake "github.com/qlanduril/go-snake/snake"
+
 	ebiten "github.com/hajimehoshi/ebiten/v2"
 )
 
 // Game implements ebiten.Game interface.
-type Game struct{}
+type Game struct {
+	boardWidth  int
+	boardHeight int
+	snakeBody   snake.Snake
+}
+
+func NewGame(sizeX, sizeY int) *Game {
+
+	return &Game{
+		boardWidth:  sizeX,
+		boardHeight: sizeY,
+		snakeBody:   *snake.NewSnake(2, nil),
+	}
+}
 
 // Update proceeds the game state.
 // Update is called every tick (1/60 [s] by default).
