@@ -14,7 +14,7 @@ import (
 type Game struct {
 	boardWidth  int
 	boardHeight int
-	snakeBody   snake.Snake
+	snakeBody   *snake.Snake
 }
 
 func NewGame(sizeX, sizeY int) *Game {
@@ -22,7 +22,7 @@ func NewGame(sizeX, sizeY int) *Game {
 	return &Game{
 		boardWidth:  sizeX,
 		boardHeight: sizeY,
-		snakeBody:   *snake.NewSnake(2, nil),
+		snakeBody:   snake.NewSnake(2, nil),
 	}
 }
 
