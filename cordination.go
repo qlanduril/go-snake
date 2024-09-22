@@ -1,4 +1,4 @@
-package cordination
+package main
 
 type Position struct {
 	dimensionSize int

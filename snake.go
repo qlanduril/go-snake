@@ -1,9 +1,6 @@
-package snake
+package main
 
-import (
-	//"fmt"
-	cord "github.com/qlanduril/go-snake/cordination"
-)
+//"fmt"
 
 const (
 	HEAD_DIRECTION_NULL  = 0
@@ -16,15 +13,15 @@ const (
 type Snake struct {
 	length        int
 	headDirection int
-	body          []*cord.Position
+	body          []*Position
 }
 
-func NewSnake(dSize int, headPos *cord.Position) *Snake {
+func NewSnake(dSize int, headPos *Position) *Snake {
 
-	tmp := make([]*cord.Position, 1)
+	tmp := make([]*Position, 1)
 
 	if headPos == nil {
-		tmp[0] = cord.NewPosition(dSize)
+		tmp[0] = NewPosition(dSize)
 	} else {
 		tmp[0] = headPos
 	}
